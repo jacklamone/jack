@@ -1,30 +1,31 @@
 # Intellecta Solutions — sito web
 
-Sito vetrina statico di [intellectasolutions.it](https://intellectasolutions.it): nessun framework, nessuna dipendenza esterna, nessun processo di build. Basta un qualsiasi hosting statico.
+Sito di [intellectasolutions.it](https://intellectasolutions.it) (dominio su Aruba, hosting su Netlify), design "Liquid Glass" su fondo nero.
+
+Questa versione è la ricostruzione statica del sito originale: **stessi contenuti, stessa grafica, stesso form contatti Netlify**, ma senza React/Babel/Tailwind caricati dal browser. Risultato: caricamento molto più rapido, contenuti indicizzabili dai motori di ricerca e menu di navigazione anche su mobile.
 
 ## Struttura
 
 ```
-index.html              Pagina unica (hero, servizi, metodo, chi siamo, contatti)
-assets/css/style.css    Stili — i colori e i font sono definiti come token in cima al file
-assets/js/main.js       Menu mobile, animazioni di comparsa, griglia animata dell'hero
-assets/fonts/           Font auto-ospitati (Bricolage Grotesque, Instrument Sans, Spline Sans Mono)
+index.html              Pagina unica: Visione (hero), Il Metodo, Contatti
+assets/css/style.css    Stili — include la ricetta "liquid glass" originale
+assets/js/main.js       Video in dissolvenza, animazioni, menu mobile, invio form
+assets/fonts/           Instrument Serif e Barlow auto-ospitati
 ```
 
-## Come modificare i contenuti
+## Note tecniche
 
-Tutti i testi sono in `index.html`, in italiano, organizzati per sezione (cerca i commenti `<!-- ============ SERVIZI ============ -->` ecc.).
+- **Form contatti**: usa Netlify Forms (`data-netlify="true"`, form `contatti` con campi `nome`, `email`, `messaggio` come l'originale). Le richieste arrivano nel pannello Netlify → Forms. È stato aggiunto un campo honeypot anti-spam (`bot-field`).
+- **Video di sfondo**: restano quelli originali su CloudFront (3 sezioni, 2 clip). Con `prefers-reduced-motion` i video rimangono fermi.
+- **Logo**: caricato via `google.com/s2/favicons` come nell'originale. Meglio sostituirlo con un file locale (es. `assets/img/logo.png`) appena disponibile.
+- **Font**: self-hosted in `assets/fonts/` (niente richieste a Google Fonts, meglio per GDPR e velocità).
 
-- **Colori e tipografia**: token CSS in cima a `assets/css/style.css` (`--paper`, `--ink`, `--cobalto`, `--arancio`). Il tema scuro si adatta automaticamente alle preferenze del visitatore.
-- **Email di contatto**: cercare `info@intellectasolutions.it` in `index.html`.
+## Deploy su Netlify
 
-## Da completare prima della pubblicazione
+Il modo più pulito: su Netlify → **Site configuration → Build & deploy → Link repository** e collega questo repo (branch `main`, publish directory `/`, nessun build command). Da lì in poi ogni push pubblica in automatico. In alternativa, trascina la cartella del progetto in Netlify → Deploys.
 
-- [ ] Inserire **P.IVA** e sede legale nel footer (c'è un commento `TODO` in `index.html`)
-- [ ] Aggiungere link a **privacy e cookie policy** (obbligo GDPR)
-- [ ] Verificare e adattare i testi di servizi e "Chi siamo" alla realtà aziendale
-- [ ] Eventuali profili social nel footer
+## Da valutare
 
-## Pubblicazione
-
-Qualsiasi hosting statico va bene (GitHub Pages, Netlify, Cloudflare Pages, o l'hosting attuale via FTP). Per GitHub Pages: Settings → Pages → deploy dal branch, cartella root. Il file `.nojekyll` è già presente.
+- [ ] Sostituire il logo remoto con un file locale
+- [ ] Aggiungere P.IVA e link privacy/cookie policy (obbligo GDPR, oggi assenti)
+- [ ] Ospitare i video su Netlify stesso se CloudFront dovesse cambiare
