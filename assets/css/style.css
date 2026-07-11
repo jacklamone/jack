@@ -146,12 +146,12 @@ a { color: inherit; }
   opacity: 0;               /* il fade-in è gestito da main.js */
 }
 .hero-video {
+  inset: auto;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 120%;
   height: 120%;
-  inset: auto;
-  top: 0;
   object-position: top;
 }
 
