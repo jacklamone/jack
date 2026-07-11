@@ -41,7 +41,10 @@
       raf = requestAnimationFrame(step);
     }
 
-    video.addEventListener("loadeddata", function () {
+    var started = false;
+    function start() {
+      if (started) return;
+      started = true;
       if (reducedMotion) {
         video.pause();
         video.style.opacity = "0.6";
@@ -50,7 +53,16 @@
       video.style.opacity = "0";
       video.play().catch(function () {});
       fadeTo(1, 500);
-    });
+    }
+
+    /* Il video può essere già pronto prima che questo script si attivi:
+       in quel caso 'loadeddata' non arriverà mai, quindi si parte subito. */
+    if (video.readyState >= 2) {
+      start();
+    } else {
+      video.addEventListener("loadeddata", start);
+      video.addEventListener("canplay", start);
+    }
 
     video.addEventListener("timeupdate", function () {
       if (reducedMotion) return;
