@@ -136,6 +136,14 @@ a { color: inherit; }
 }
 
 /* ---------- Video di sfondo ---------- */
+/* Nasconde il simbolo play che iOS sovrappone ai video bloccati */
+.bg-video::-webkit-media-controls-start-playback-button,
+.bg-video::-webkit-media-controls-overlay-play-button,
+.bg-video::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0;
+}
 .bg-video {
   position: absolute;
   inset: 0;

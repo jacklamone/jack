@@ -90,6 +90,19 @@
   }
   document.querySelectorAll(".bg-video").forEach(setupFadingVideo);
 
+  /* Safari/iOS con risparmio energetico blocca l'autoplay e mostra
+     il simbolo play: al primo tocco o scroll riproviamo a far
+     partire tutti i video fermi. */
+  function riprovaAvvio() {
+    if (reducedMotion) return;
+    document.querySelectorAll(".bg-video").forEach(function (v) {
+      if (v.paused) v.play().catch(function () {});
+    });
+  }
+  ["pointerdown", "touchstart", "scroll"].forEach(function (ev) {
+    window.addEventListener(ev, riprovaAvvio, { once: true, passive: true });
+  });
+
   /* ---------- Comparsa progressiva delle card ---------- */
   var cards = document.querySelectorAll(".reveal");
   cards.forEach(function (el, i) {
