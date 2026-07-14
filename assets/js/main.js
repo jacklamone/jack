@@ -64,6 +64,10 @@
       video.addEventListener("canplay", start);
     }
 
+    /* I video con l'attributo loop restano fissi: niente dissolvenza
+       di uscita, il ciclo lo gestisce il browser. */
+    if (video.hasAttribute("loop")) return;
+
     video.addEventListener("timeupdate", function () {
       if (reducedMotion) return;
       var left = video.duration - video.currentTime;
