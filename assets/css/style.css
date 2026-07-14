@@ -546,6 +546,21 @@ a { color: inherit; }
   flex-direction: column;
   overflow: hidden;
 }
+/* Velo scuro sopra il video: mantiene leggibile il testo delle card */
+.metodo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(3, 6, 12, 0.78) 0%,
+    rgba(3, 6, 12, 0.6) 45%,
+    rgba(3, 6, 12, 0.82) 100%);
+}
+/* Card leggermente più piene sopra i video luminosi */
+.metodo .card { background: rgba(6, 10, 18, 0.42); }
+.metodo .card-tags span, .metodo .card-icon { background: rgba(6, 10, 18, 0.5); }
 
 .metodo-inner {
   position: relative;
@@ -570,7 +585,7 @@ a { color: inherit; }
   font-size: clamp(3.75rem, 8vw, 6rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  padding-right: 0.08em; /* i corsivi sporgono oltre il box del glifo */
+  padding-inline: 0.08em; /* i corsivi sporgono oltre il box del glifo, da entrambi i lati */
 }
 @media (max-width: 480px) {
   .metodo-title { font-size: 3rem; }
@@ -687,7 +702,7 @@ a { color: inherit; }
   line-height: 0.95;
   letter-spacing: -0.03em;
   margin-bottom: 2rem;
-  padding-right: 0.08em; /* i corsivi sporgono oltre il box del glifo */
+  padding-inline: 0.08em; /* i corsivi sporgono oltre il box del glifo, da entrambi i lati */
 }
 @media (max-width: 480px) {
   .contatti-msg h2 { font-size: 2.6rem; }
