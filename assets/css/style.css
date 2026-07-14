@@ -558,9 +558,27 @@ a { color: inherit; }
     rgba(3, 6, 12, 0.6) 45%,
     rgba(3, 6, 12, 0.82) 100%);
 }
-/* Card leggermente più piene sopra i video luminosi */
-.metodo .card { background: rgba(6, 10, 18, 0.42); }
+/* Card leggermente più piene sopra i video luminosi.
+   Niente sfocatura dietro le card: il video resta nitido. */
+.metodo .card {
+  background: rgba(6, 10, 18, 0.42);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
 .metodo .card-tags span, .metodo .card-icon { background: rgba(6, 10, 18, 0.5); }
+/* Velo più leggero: le card sono già scure di loro */
+.metodo::before {
+  background: linear-gradient(180deg,
+    rgba(3, 6, 12, 0.62) 0%,
+    rgba(3, 6, 12, 0.42) 45%,
+    rgba(3, 6, 12, 0.66) 100%);
+}
+/* Form contatti: vetro più lieve, il video dietro resta riconoscibile */
+.contatti-form {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(6, 10, 18, 0.35);
+}
 
 .metodo-inner {
   position: relative;
