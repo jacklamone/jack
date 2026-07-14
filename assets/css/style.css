@@ -546,42 +546,6 @@ a { color: inherit; }
   flex-direction: column;
   overflow: hidden;
 }
-/* ---------- Fascia oro: video fisso dietro Cosa Facciamo + Il Metodo ---------- */
-.gold-band { position: relative; }
-.gold-bg {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100svh;
-  overflow: hidden;
-  background: #000;
-}
-.gold-bg .bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.gold-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg,
-    rgba(3, 6, 12, 0.72) 0%,
-    rgba(3, 6, 12, 0.48) 50%,
-    rgba(3, 6, 12, 0.74) 100%);
-}
-.gold-band > .metodo {
-  position: relative;
-  z-index: 1;
-  background: transparent;
-}
-.gold-band > .metodo:first-of-type {
-  margin-top: -100vh;
-  margin-top: -100svh;
-}
-.gold-band .metodo::before { display: none; }
-
 /* Velo scuro sopra il video: mantiene leggibile il testo delle card */
 .metodo::before {
   content: "";
