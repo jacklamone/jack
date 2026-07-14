@@ -546,6 +546,21 @@ a { color: inherit; }
   flex-direction: column;
   overflow: hidden;
 }
+/* Dissolvenza tra le sezioni: i bordi sfumano nel nero,
+   così il passaggio tra i video non mostra una linea netta */
+.hero::after,
+.metodo::after,
+.contatti::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 16%),
+    linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 16%);
+}
+
 /* Velo scuro sopra il video: mantiene leggibile il testo delle card */
 .metodo::before {
   content: "";
