@@ -565,8 +565,8 @@ a { color: inherit; }
   z-index: 2;
   pointer-events: none;
   background:
-    linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 16%),
-    linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 16%);
+    linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.55) 12%, rgba(0, 0, 0, 0) 30%),
+    linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.55) 12%, rgba(0, 0, 0, 0) 30%);
 }
 
 /* Velo scuro sopra il video: mantiene leggibile il testo delle card */

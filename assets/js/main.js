@@ -51,8 +51,9 @@
         return;
       }
       video.style.opacity = "0";
+      video.playbackRate = 0.75; /* leggero rallentatore, più cinematografico */
       video.play().catch(function () {});
-      fadeTo(1, 500);
+      fadeTo(1, 1400);
     }
 
     /* Il video può essere già pronto prima che questo script si attivi:
@@ -84,7 +85,7 @@
         video.currentTime = 0;
         video.play().catch(function () {});
         fadingOut = false;
-        fadeTo(1, 500);
+        fadeTo(1, 900);
       }, 100);
     });
   }
