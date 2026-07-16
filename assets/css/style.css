@@ -490,7 +490,7 @@ a { color: inherit; }
   margin-top: 2rem;
 }
 .stat-card {
-  width: 220px;
+  width: 230px;
   border-radius: 1.25rem;
   padding: 1.25rem;
   text-align: left;
@@ -508,7 +508,7 @@ a { color: inherit; }
   line-height: 1;
 }
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 300;
   margin-top: 0.5rem;
 }
@@ -657,15 +657,15 @@ a { color: inherit; }
   gap: 1rem;
 }
 .card-icon {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 0.75rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
-.card-icon svg { width: 1.5rem; height: 1.5rem; }
+.card-icon svg { width: 1.75rem; height: 1.75rem; }
 .card-tags {
   display: flex;
   flex-wrap: wrap;
@@ -675,8 +675,8 @@ a { color: inherit; }
 }
 .card-tags span {
   border-radius: 9999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.688rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
 }
@@ -684,15 +684,15 @@ a { color: inherit; }
 .card-bottom h3 {
   font-family: var(--font-heading);
   font-style: italic;
-  font-size: clamp(1.875rem, 3vw, 2.25rem);
+  font-size: clamp(2.125rem, 3.2vw, 2.5rem);
   letter-spacing: -1px;
   line-height: 1;
 }
 .card-bottom p {
-  margin-top: 0.75rem;
-  font-size: 0.875rem;
+  margin-top: 0.875rem;
+  font-size: 1rem;
   font-weight: 300;
-  line-height: 1.375;
+  line-height: 1.45;
   color: rgba(255, 255, 255, 0.9);
   max-width: 32ch;
 }
