@@ -195,6 +195,28 @@ a { color: inherit; }
   object-fit: cover;
 }
 
+/* Wordmark accanto al logo. In assoluto, così la pill resta centrata. */
+.nav-name {
+  position: absolute;
+  left: calc(clamp(1.25rem, 4vw, 4rem) + clamp(4.5rem, 8vw, 7rem) + 0.9rem);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(105deg, #f6e3b0 0%, #e2bd76 55%, #c08f3d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Fascia in cui il wordmark toccherebbe il menu centrale */
+@media (min-width: 901px) and (max-width: 1180px) {
+  .nav-name { display: none; }
+}
+
 .nav-pill {
   display: flex;
   align-items: center;
