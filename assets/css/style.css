@@ -751,7 +751,8 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem clamp(2rem, 6vw, 5rem);
+  /* Il padding extra in basso fa spazio al link "Torna su" */
+  padding: 6rem clamp(2rem, 6vw, 5rem) 9.5rem;
   overflow: hidden;
 }
 .contatti .bg-video { object-position: bottom; }
@@ -873,6 +874,43 @@ a { color: inherit; }
 }
 .contatti-form button:hover { background: rgba(255, 255, 255, 0.9); }
 .contatti-form button:disabled { opacity: 0.7; cursor: wait; }
+
+/* ---------- Torna su (fine pagina) ---------- */
+.back-top {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+}
+.back-top-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 150ms ease;
+}
+.back-top:hover .back-top-label { color: #fff; }
+.back-top:hover .card-icon {
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.12),
+    0 0 26px rgba(212, 168, 83, 0.28);
+}
+/* La freccia oscilla piano verso l'alto, come un invito a salire */
+.back-top .card-icon svg { animation: nudge-up 2.2s ease-in-out infinite; }
+@keyframes nudge-up {
+  0%, 100% { transform: translateY(2px); }
+  50%      { transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .back-top .card-icon svg { animation: none; }
+}
 
 .form-success {
   text-align: center;
