@@ -195,28 +195,6 @@ a { color: inherit; }
   object-fit: cover;
 }
 
-/* Wordmark accanto al logo. In assoluto, così la pill resta centrata. */
-.nav-name {
-  position: absolute;
-  left: calc(clamp(1.25rem, 4vw, 4rem) + clamp(4.5rem, 8vw, 7rem) + 0.9rem);
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  white-space: nowrap;
-  background: linear-gradient(105deg, #f6e3b0 0%, #e2bd76 55%, #c08f3d 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-/* Fascia in cui il wordmark toccherebbe il menu centrale */
-@media (min-width: 901px) and (max-width: 1180px) {
-  .nav-name { display: none; }
-}
-
 .nav-pill {
   display: flex;
   align-items: center;
@@ -402,6 +380,31 @@ a { color: inherit; }
     transparent 15%,
     rgba(1, 4, 15, 0.8) 65%,
     rgba(0, 2, 8, 0.95) 100%);
+}
+
+/* Wordmark nell'hero: affianca il logo a inizio pagina ma resta
+   nella prima schermata (scorre via, non segue il logo fisso).
+   Allineato verticalmente al centro del logo della navbar. */
+.brand-name {
+  position: absolute;
+  left: calc(clamp(1.25rem, 4vw, 4rem) + clamp(4.5rem, 8vw, 7rem) + 1rem);
+  top: calc(1rem + clamp(4.5rem, 8vw, 7rem) / 2);
+  transform: translateY(-50%);
+  z-index: 20;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(105deg, #f6e3b0 0%, #e2bd76 55%, #c08f3d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Fascia in cui il wordmark toccherebbe il menu centrale fisso */
+@media (min-width: 901px) and (max-width: 1280px) {
+  .brand-name { display: none; }
 }
 
 .hero-content {
