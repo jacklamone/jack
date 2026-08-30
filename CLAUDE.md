@@ -25,6 +25,7 @@ assets/css/style.css   Stili (design "liquid glass" su nero)
 assets/js/main.js      Video, animazioni, menu mobile, form
 assets/fonts/          Instrument Serif + Barlow auto-ospitati
 assets/img/            Logo (anche favicon)
+privacy.html / cookie.html  Informative (en/, es/)
 ```
 
 ## Sistema video di sfondo
@@ -48,4 +49,4 @@ Netlify → Forms. Non rinominare form o campi: si perde lo storico.
 
 ## Da fare prima o poi
 
-- P.IVA e privacy/cookie policy nel footer (obbligo GDPR, oggi assenti)
+- P.IVA nel footer: ancora placeholder `[da inserire]` (privacy/cookie stub già in pagina)
