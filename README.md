@@ -8,6 +8,7 @@ Questa versione è la ricostruzione statica del sito originale: **stessi contenu
 
 ```
 index.html              Pagina unica: Visione (hero), Il Metodo, Contatti
+privacy.html / cookie.html   Informative (anche en/ e es/)
 assets/css/style.css    Stili — include la ricetta "liquid glass" originale
 assets/js/main.js       Video in dissolvenza, animazioni, menu mobile, invio form
 assets/fonts/           Instrument Serif e Barlow auto-ospitati
@@ -27,5 +28,5 @@ Il modo più pulito: su Netlify → **Site configuration → Build & deploy → 
 ## Da valutare
 
 - [ ] Sostituire il logo remoto con un file locale
-- [ ] Aggiungere P.IVA e link privacy/cookie policy (obbligo GDPR, oggi assenti)
+- [x] Footer con link privacy/cookie (IT/EN/ES). P.IVA ancora placeholder `[da inserire]`
 - [ ] Ospitare i video su Netlify stesso se CloudFront dovesse cambiare
