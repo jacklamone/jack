@@ -1,0 +1,39 @@
+name: Uptime intellectasolutions.it
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check IT EN ES
+        run: |
+          set -e
+          fail=0
+          for path in "/" "/en/" "/es/"; do
+            url="https://intellectasolutions.it${path}"
+            tmp=$(mktemp)
+            code=$(curl -sS -o "$tmp" -w "%{http_code}" --max-time 20 "$url" || echo 000)
+            bytes=$(wc -c < "$tmp" | tr -d ' ')
+            echo "$url -> HTTP $code, $bytes byte"
+            if [ "$code" != "200" ]; then
+              echo "DOWN: status $code"
+              fail=1
+            fi
+            if [ "$bytes" -lt 10000 ]; then
+              echo "STUB: pagina troppo corta"
+              fail=1
+            fi
+            if grep -qE "FILE INCOMPLETO|jsdelivr.net/gh/jacklamone|PLACEHOLDER" "$tmp"; then
+              echo "STUB: contenuto di emergenza"
+              fail=1
+            fi
+            if ! grep -q "hero-title" "$tmp" || ! grep -q "</footer>" "$tmp"; then
+              echo "STUB: manca hero o footer"
+              fail=1
+            fi
+          done
+          exit $fail
