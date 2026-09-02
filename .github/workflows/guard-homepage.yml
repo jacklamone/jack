@@ -1,0 +1,24 @@
+name: Guard homepage
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  homepage-completa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: index.html deve essere la pagina intera
+        run: |
+          set -e
+          bytes=$(wc -c < index.html)
+          echo "index.html: $bytes byte"
+          if [ "$bytes" -lt 15000 ]; then
+            echo "Homepage troppo corta ($bytes byte). Probabile file incompleto: non pubblicare."
+            exit 1
+          fi
+          grep -q "hero-title" index.html
+          grep -q "</footer>" index.html
+          grep -q "assets/js/main.js" index.html
+          echo "OK: homepage completa."
