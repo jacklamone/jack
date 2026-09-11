@@ -1,13 +1,1 @@
-/* Base styles from last good commit; Dashboard #servizi 4-col grid overrides below. */
-@import url("https://cdn.jsdelivr.net/gh/jacklamone/jack@53ffab48fa53a9cf1e1476af76a0746d97255461/assets/css/style.css");
-
-#servizi .cards {
-  grid-template-columns: repeat(4, 1fr);
-}
-@media (max-width: 1024px) {
-  #servizi .cards { grid-template-columns: repeat(2, 1fr); }
-  #servizi .cards .card:nth-child(odd):last-child { grid-column: auto; }
-}
-@media (max-width: 640px) {
-  #servizi .cards { grid-template-columns: 1fr; }
-}
+PLACEHOLDER_LOAD_FROM_FILE
