@@ -1,1 +1,13 @@
-/* === TEST_MARKER_SHOULD_NOT_REMAIN === */
+/* Base stylesheet from default branch; Dashboard #servizi grid overrides below. */
+@import url("https://cdn.jsdelivr.net/gh/jacklamone/jack@afafa6989b3206c3f0b092185f432cbc981bbd21/assets/css/style.css");
+
+#servizi .cards {
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1024px) {
+  #servizi .cards { grid-template-columns: repeat(2, 1fr); }
+  #servizi .cards .card:nth-child(odd):last-child { grid-column: auto; }
+}
+@media (max-width: 640px) {
+  #servizi .cards { grid-template-columns: 1fr; }
+}
