@@ -27,7 +27,7 @@ recapiti va fatta in **tutti** i file `.html`.
 - [ ] P.IVA nel footer e dati del titolare in `privacy.html`
 - [ ] Storie di successo: logo/foto, tipo di finanziamento, descrizione (4 schede)
 - [ ] Far verificare al cliente i dati biografici in `chi-siamo.html` (presi dall'intervista su Microfinanza n. 49)
-- [ ] Foto ritratto del Dott. Fiore (facoltativa, sostituirebbe la card con il logo in Chi siamo)
+- Nessuna foto del Dott. Fiore per scelta: il sito punta su serietà e metodo, non sul volto
 - [ ] Rimuovere `<meta name="robots" content="noindex, nofollow">` da tutte le pagine quando il sito va sul dominio definitivo, e aggiungere `canonical` e sitemap
 
 ## Note tecniche

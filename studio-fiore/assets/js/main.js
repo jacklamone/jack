@@ -87,8 +87,9 @@
   document.querySelectorAll("[data-youtube]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var id = btn.getAttribute("data-youtube");
+      var start = parseInt(btn.getAttribute("data-start"), 10) || 0;
       var iframe = document.createElement("iframe");
-      iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+      iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0" + (start ? "&start=" + start : "");
       iframe.title = btn.getAttribute("data-title") || "Video";
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
