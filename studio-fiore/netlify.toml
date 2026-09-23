@@ -1,0 +1,11 @@
+# Studio Dott. Stefano Fiore — sito statico, nessun build
+[build]
+  publish = "."
+  command = "echo no-build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
