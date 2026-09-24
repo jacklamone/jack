@@ -25,6 +25,7 @@ recapiti va fatta in **tutti** i file `.html`.
 ## Da completare prima della messa online
 
 - [ ] Email e telefono (footer di tutte le pagine + `contatti.html`): ora `[email da inserire]` / `[telefono da inserire]`
+- [ ] Link social (footer di tutte le pagine, pulsante flottante, `contatti.html`): WhatsApp `https://wa.me/[numero-whatsapp]` (numero con prefisso 39, senza + né spazi), Facebook `[pagina-facebook]`, Instagram `[profilo-instagram]`. LinkedIn già attivo.
 - [ ] P.IVA nel footer e dati del titolare (indirizzo, C.F., email, PEC, telefono) in `note-legali.html`, `privacy.html`, `cookie.html`
 - [ ] Confermare il tempo di conservazione delle richieste in `privacy.html` (ora `[12] mesi`) e far verificare le informative
 - [ ] Storie di successo: logo/foto, tipo di finanziamento, descrizione (4 schede)
