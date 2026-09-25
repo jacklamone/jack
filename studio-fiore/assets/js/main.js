@@ -132,6 +132,15 @@
     });
   }
 
+  /* ---------- Pulsante WhatsApp: si nasconde sul footer (lì ci sono già i contatti) ---------- */
+  var wa = document.querySelector(".wa-float");
+  var footer = document.querySelector(".site-footer");
+  if (wa && footer && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      wa.classList.toggle("is-away", entries[0].isIntersecting);
+    }, { threshold: 0.05 }).observe(footer);
+  }
+
   /* ---------- Anno nel footer ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();

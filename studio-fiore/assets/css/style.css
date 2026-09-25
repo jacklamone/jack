@@ -723,14 +723,6 @@ h1 em, h2 em, h3 em { font-style: italic; font-weight: 300; color: var(--royal);
   .diff, .diff:nth-child(even), .diff:not(:nth-child(3n+1)) { padding: 28px 0 30px; border-left: 0; }
 }
 
-/* Credito realizzazione sito */
-.footer-credit { display: flex; justify-content: center; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line-dark); }
-.credit { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: rgba(255,255,255,.55); font-size: .8rem; letter-spacing: .02em; transition: color .3s; }
-.credit img { width: 18px; height: 18px; border-radius: 50%; transition: transform .5s var(--ease); }
-.credit b { color: #fff; font-weight: 600; }
-.credit:hover { color: #fff; }
-.credit:hover img { transform: rotate(-12deg) scale(1.06); }
-
 /* Social nel footer */
 .socials { list-style: none; display: flex; gap: 10px; margin: 26px 0 0; padding: 0; }
 .socials a {
@@ -759,3 +751,28 @@ h1 em, h2 em, h3 em { font-style: italic; font-weight: 300; color: var(--royal);
   .wa-float-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }
 .contact-list .ci svg[fill="none"] { fill: none; }
+
+/* Riga finale del footer: copyright · credito · informative · torna su */
+.footer-bottom { align-items: center; justify-content: flex-start; gap: 14px 34px; font-size: .9rem; color: rgba(255,255,255,.7); }
+.fb-copy .sep { margin: 0 8px; }
+.credit { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: rgba(255,255,255,.7); transition: color .3s; }
+.credit img { width: 22px; height: 22px; border-radius: 50%; transition: transform .5s var(--ease); }
+.credit b { color: #fff; font-weight: 600; }
+.credit:hover { color: #fff; }
+.credit:hover img { transform: rotate(-12deg) scale(1.08); }
+.fb-legal { margin-left: auto; display: flex; flex-wrap: wrap; gap: 10px 28px; }
+.footer-bottom .fb-legal a { color: rgba(255,255,255,.78); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; text-decoration-color: rgba(255,255,255,.35); }
+.footer-bottom .fb-legal a:hover { color: #fff; text-decoration-color: #fff; }
+.to-top {
+  width: 52px; height: 52px; border-radius: 50%; flex: none; display: grid; place-items: center;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); color: #fff;
+  transition: background .3s, color .3s, transform .4s var(--ease);
+}
+.to-top svg { width: 22px; height: 22px; }
+.to-top:hover { background: #fff; color: var(--ink); transform: translateY(-3px); }
+.wa-float.is-away { opacity: 0; visibility: hidden; transform: translateY(12px); }
+@media (max-width: 900px) {
+  .footer-bottom { position: relative; flex-direction: column; align-items: flex-start; gap: 16px; padding-right: 70px; }
+  .fb-legal { margin-left: 0; }
+  .to-top { position: absolute; right: 0; top: 24px; }
+}
