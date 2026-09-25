@@ -776,3 +776,12 @@ h1 em, h2 em, h3 em { font-style: italic; font-weight: 300; color: var(--royal);
   .fb-legal { margin-left: 0; }
   .to-top { position: absolute; right: 0; top: 24px; }
 }
+
+.credit .sep { margin: 0 7px; opacity: .45; }
+.credit > span, .credit b { white-space: nowrap; }
+@media (max-width: 900px) {
+  .footer-bottom { padding-right: 0; }
+  .fb-legal { padding-right: 70px; }
+  .to-top { top: auto; bottom: 0; }
+}
+@media (max-width: 380px) { .credit { flex-wrap: wrap; row-gap: 6px; } }
