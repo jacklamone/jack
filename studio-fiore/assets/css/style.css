@@ -725,8 +725,8 @@ h1 em, h2 em, h3 em { font-style: italic; font-weight: 300; color: var(--royal);
 
 /* Credito realizzazione sito */
 .footer-credit { display: flex; justify-content: center; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line-dark); }
-.credit { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: rgba(255,255,255,.6); font-size: .84rem; letter-spacing: .02em; transition: color .3s; }
-.credit img { width: 28px; height: 28px; border-radius: 50%; transition: transform .5s var(--ease); }
+.credit { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: rgba(255,255,255,.55); font-size: .8rem; letter-spacing: .02em; transition: color .3s; }
+.credit img { width: 18px; height: 18px; border-radius: 50%; transition: transform .5s var(--ease); }
 .credit b { color: #fff; font-weight: 600; }
 .credit:hover { color: #fff; }
 .credit:hover img { transform: rotate(-12deg) scale(1.06); }
